@@ -1,0 +1,38 @@
+[
+  {
+    "incident_id": "INC-1042",
+    "title": "Checkout API latency spike",
+    "service": "payment-service",
+    "environment": "production",
+    "severity": "SEV-1",
+    "error_message": "ConnectionPoolTimeout",
+    "description": "Checkout API latency increased above 5 seconds during a traffic spike.",
+    "traffic": 3200,
+    "database": "PostgreSQL",
+    "status": "resolved",
+    "root_cause": "Database connection pool exhaustion caused by insufficient pool size during increased traffic.",
+    "resolution": "Increased database connection pool size from 50 to 120 connections.",
+    "successful": true,
+    "attempted_actions": [
+      "Restarted payment-service",
+      "Checked database connections",
+      "Increased connection pool from 50 to 120"
+    ]
+  },
+  {
+    "incident_id": "INC-1078",
+    "title": "Checkout timeouts during flash-sale traffic",
+    "service": "payment-service",
+    "environment": "production",
+    "severity": "SEV-1",
+    "error_message": "ConnectionPoolTimeout",
+    "description": "Checkout requests began timing out during a flash-sale traffic surge. API latency increased rapidly and payment requests started queuing.",
+    "traffic": 4100,
+    "database": "PostgreSQL",
+    "status": "investigating",
+    "root_cause": null,
+    "resolution": null,
+    "successful": false,
+    "attempted_actions": []
+  }
+]
