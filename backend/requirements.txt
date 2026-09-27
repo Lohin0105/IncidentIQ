@@ -4,3 +4,4 @@ pydantic
 python-dotenv
 hindsight-client
 httpx
+groq
